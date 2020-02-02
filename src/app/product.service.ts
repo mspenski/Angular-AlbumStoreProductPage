@@ -11,9 +11,8 @@ export class ProductService {
 
   private _albumUrl: string = '../assets/album.json'
 
-  getAlbum = (id: number): Observable<Album> => {
-    return this._http.get(this._albumUrl).map((response: Response) =>
-      <Album>response.json())
+  getAlbum(id: number): Observable<Album> {
+    return this._http.get(this._albumUrl).map((response =>
+      <Album>response.json()))
   }
-
 }
